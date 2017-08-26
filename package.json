@@ -1,0 +1,23 @@
+{
+  "name": "mazegame",
+  "version": "1.0.0",
+  "description": "Moscow maze game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --inline",
+    "watch": "webpack --progress --colors --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-maze-game:mskmazegame/mskmazegame.github.io.git"
+  },
+  "author": "mskmazegame@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.28.5",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
