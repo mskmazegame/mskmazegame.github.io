@@ -69,15 +69,9 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_css__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
 
-
-let a = () => {
-    alert('asd');
-};
-
-a();
 
 /***/ }),
 /* 1 */
@@ -100,8 +94,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/sass-loader/lib/loader.js!./style.scss");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -119,7 +113,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n    background-color: white;\n}", ""]);
+exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  font-family: 'Roboto';\n  margin: 0;\n  padding: 0; }\n\n.main {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  align-content: stretch; }\n\n.header {\n  height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.footer {\n  height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.content {\n  flex: 1;\n  background-image: repeating-linear-gradient(135deg, #fff, #fff 60px, #70C8A0 60px, #70C8A0 120px);\n  border: solid #D8D8D8;\n  border-width: 11px 0; }\n\n.title {\n  font-size: 48px;\n  color: #3A7395; }\n\n.btn-start-game {\n  height: 100px;\n  width: 280px;\n  background-color: #84CDF9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none; }\n\n.btn-text {\n  color: #fff;\n  font-size: 36px; }\n", ""]);
 
 // exports
 

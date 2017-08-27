@@ -1,7 +1,1 @@
-import './style.css';
-
-let a = () => {
-    alert('asd')
-};
-
-a();
+import './style.scss';
