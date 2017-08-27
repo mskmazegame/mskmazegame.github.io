@@ -15,6 +15,9 @@
   "author": "mskmazegame@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2017": "^6.24.1",
     "css-loader": "^0.28.5",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5",

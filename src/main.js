@@ -1,5 +1,7 @@
 import './style.css';
 
-function a() {
+let a = () => {
+    alert('asd')
+};
 
-}
+a();

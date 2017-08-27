@@ -73,9 +73,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_css__);
 
 
-function a() {
+let a = () => {
+    alert('asd');
+};
 
-}
+a();
 
 /***/ }),
 /* 1 */
