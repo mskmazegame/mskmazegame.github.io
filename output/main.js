@@ -73,6 +73,94 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
 
 
+const Screen = {
+    START: 'start',
+    STORY_1: 'story-1',
+    MAZE_1: 'maze-1',
+    STORY_2: 'story-2'
+};
+
+const Maze = {
+    MAZE_1: 'maze-1',
+    MAZE_2: 'maze-2'
+};
+
+const MAZE_MATRIX_1 = [[{ right: 1 }, { top: 1, right: 1, bottom: 1, left: 1 }, { left: 1 }], [{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1 }]];
+
+function getMazeEl(mazeId) {
+    return document.getElementById(mazeId);
+}
+
+function getScreenEl(screen) {
+    return document.getElementById('screen-' + screen);
+}
+
+function showScreen(screen) {
+    getScreenEl(screen).classList.remove('hidden');
+}
+
+function hideScreen(screen) {
+    getScreenEl(screen).classList.add('hidden');
+}
+
+function renderMazeCell(cell) {
+    const div = document.createElement('div');
+    div.className = 'maze-cell';
+    if (cell.top) {
+        div.style.borderTopWidth = 0;
+    }
+    if (cell.right) {
+        div.style.borderRightWidth = 0;
+    }
+    if (cell.bottom) {
+        div.style.borderBottomWidth = 0;
+    }
+    if (cell.left) {
+        div.style.borderLeftWidth = 0;
+    }
+
+    return div;
+}
+
+function renderMazeRow(row) {
+    const div = document.createElement('div');
+    div.className = 'maze-row';
+    row.forEach(cell => div.appendChild(renderMazeCell(cell)));
+    return div;
+}
+
+function renderMaze(matrix) {
+    const div = document.createElement('div');
+    div.className = 'maze';
+    matrix.forEach(row => div.appendChild(renderMazeRow(row)));
+    return div;
+}
+
+class MazeGame {
+    constructor() {
+        this.activeScreen = Screen.START;
+
+        this.setActiveScreen = screen => {
+            hideScreen(this.activeScreen);
+            this.activeScreen = screen;
+            showScreen(this.activeScreen);
+        };
+
+        this.handleBtnStartClick = () => {
+            this.setActiveScreen(Screen.MAZE_1);
+        };
+
+        this.start = () => {
+            showScreen(this.activeScreen);
+            getMazeEl(Maze.MAZE_1).appendChild(renderMaze(MAZE_MATRIX_1));
+        };
+    }
+
+}
+
+window.mg = new MazeGame();
+mg.start();
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -113,7 +201,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  font-family: 'Roboto';\n  margin: 0;\n  padding: 0; }\n\n.main {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  align-content: stretch; }\n\n.header {\n  height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.footer {\n  height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.content {\n  flex: 1;\n  background-image: repeating-linear-gradient(135deg, #fff, #fff 60px, #70C8A0 60px, #70C8A0 120px);\n  border: solid #D8D8D8;\n  border-width: 11px 0; }\n\n.title {\n  font-size: 48px;\n  color: #3A7395; }\n\n.btn-start-game {\n  height: 100px;\n  width: 280px;\n  background-color: #84CDF9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none; }\n\n.btn-text {\n  color: #fff;\n  font-size: 36px; }\n", ""]);
+exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  font-family: 'Roboto';\n  margin: 0;\n  padding: 0; }\n\n.main {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  align-content: stretch; }\n\n.header {\n  height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.footer {\n  height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.green-fence {\n  background-image: repeating-linear-gradient(135deg, #fff, #fff 60px, #70C8A0 60px, #70C8A0 120px);\n  border: solid #D8D8D8;\n  border-width: 11px 0;\n  flex: 1; }\n\n.content {\n  flex: 1; }\n\n.title {\n  font-size: 48px;\n  color: #3A7395; }\n\n.btn-start-game {\n  height: 100px;\n  width: 280px;\n  background-color: #84CDF9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  cursor: pointer;\n  margin: 30px auto; }\n\n.btn-text {\n  color: #fff;\n  font-size: 36px; }\n\n.screen {\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n\n.hidden {\n  display: none; }\n\n.story-desk {\n  background-color: #C86571;\n  color: #fff;\n  padding: 30px 60px 100px;\n  max-width: 800px;\n  margin: 75px auto; }\n\n.text-title {\n  font-size: 36px;\n  padding-bottom: 20px; }\n\n.text {\n  font-size: 24px; }\n\n.maze-cell {\n  width: 50px;\n  height: 50px;\n  border: 1px solid #70C8A0; }\n\n.maze-row {\n  display: flex;\n  flex-direction: row; }\n\n.screen-maze {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n", ""]);
 
 // exports
 

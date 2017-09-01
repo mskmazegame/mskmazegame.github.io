@@ -1,0 +1,12 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        "es2017"
+      ],
+      "plugins": [
+        ["transform-class-properties", {"loose": true}]
+      ]
+    }
+  }
+}

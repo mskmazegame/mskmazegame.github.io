@@ -11,12 +11,32 @@
         <div class="title">Moscow maze game</div>
     </header>
     <section class="content">
+        <div id="screen-start" class="screen hidden">
+            <div class="green-fence">
+                <div class="story-desk">
+                    <div class="text-title">Помоги Полине вернуть Серёжу</div>
+                    <div class="text">
+                        Серёжа — бывший парень Полины. Сейчас он идёт
+                        на свидание с Наташей в Сoffee Bean.  Полина хочет
+                        вернуть Серёжу, потому что Наташа — стерва.
+                    </div>
+                </div>
+            </div>
+            <div class="btn-start-game" onclick="mg.handleBtnStartClick()">
+                <span class="btn-text">Играть</span>
+            </div>
+        </div>
+        <div id="screen-story-1" class="screen hidden">
+        </div>
+        <div id="screen-maze-1" class="screen screen-maze hidden">
+            <div id="maze-1">
+            </div>
+        </div>
+        <div id="screen-story-2" class="screen hidden">
+        </div>
+        <div id="screen-maze-2" class="screen hidden">
+        </div>
     </section>
-    <footer class="footer">
-        <button class="btn-start-game">
-            <span class="btn-text">Играть</span>
-        </button>
-    </footer>
 </div>
 <script src="output/main.js"></script>
 </body>

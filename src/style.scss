@@ -50,11 +50,15 @@ html, body {
   align-items: center;
 }
 
-.content {
-  flex: 1;
+.green-fence {
   background-image: repeating-linear-gradient(135deg, #fff, #fff 60px, #70C8A0 60px, #70C8A0 120px);
   border: solid #D8D8D8;
   border-width: 11px 0;
+  flex: 1;
+}
+
+.content {
+  flex: 1;
 }
 
 .title {
@@ -69,9 +73,56 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none
+  border: none;
+  cursor: pointer;
+  margin: 30px auto;
 }
-.btn-text{
+
+.btn-text {
   color: #fff;
   font-size: 36px;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.story-desk {
+  background-color: #C86571;
+  color: #fff;
+  padding: 30px 60px 100px;
+  max-width: 800px;
+  margin: 75px auto;
+}
+
+.text-title {
+  font-size: 36px;
+  padding-bottom: 20px;
+}
+
+.text {
+  font-size: 24px;
+}
+
+.maze-cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #70C8A0;
+}
+
+.maze-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.screen-maze {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
