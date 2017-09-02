@@ -114,15 +114,31 @@ html, body {
   width: 50px;
   height: 50px;
   border: 1px solid #70C8A0;
+  box-sizing: border-box;
 }
 
 .maze-row {
   display: flex;
   flex-direction: row;
+  .maze-cell {
+    margin-left: -1px;
+    margin-top: -1px;
+  }
+  .maze-cell:first-child {
+    margin-left: 0;
+  }
 }
 
 .screen-maze {
-  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.user-position{
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 0.5s;
 }

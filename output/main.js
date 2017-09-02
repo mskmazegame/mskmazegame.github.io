@@ -71,94 +71,11 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_MazeGame__ = __webpack_require__(6);
 
 
-const Screen = {
-    START: 'start',
-    STORY_1: 'story-1',
-    MAZE_1: 'maze-1',
-    STORY_2: 'story-2'
-};
 
-const Maze = {
-    MAZE_1: 'maze-1',
-    MAZE_2: 'maze-2'
-};
-
-const MAZE_MATRIX_1 = [[{ right: 1 }, { top: 1, right: 1, bottom: 1, left: 1 }, { left: 1 }], [{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1 }]];
-
-function getMazeEl(mazeId) {
-    return document.getElementById(mazeId);
-}
-
-function getScreenEl(screen) {
-    return document.getElementById('screen-' + screen);
-}
-
-function showScreen(screen) {
-    getScreenEl(screen).classList.remove('hidden');
-}
-
-function hideScreen(screen) {
-    getScreenEl(screen).classList.add('hidden');
-}
-
-function renderMazeCell(cell) {
-    const div = document.createElement('div');
-    div.className = 'maze-cell';
-    if (cell.top) {
-        div.style.borderTopWidth = 0;
-    }
-    if (cell.right) {
-        div.style.borderRightWidth = 0;
-    }
-    if (cell.bottom) {
-        div.style.borderBottomWidth = 0;
-    }
-    if (cell.left) {
-        div.style.borderLeftWidth = 0;
-    }
-
-    return div;
-}
-
-function renderMazeRow(row) {
-    const div = document.createElement('div');
-    div.className = 'maze-row';
-    row.forEach(cell => div.appendChild(renderMazeCell(cell)));
-    return div;
-}
-
-function renderMaze(matrix) {
-    const div = document.createElement('div');
-    div.className = 'maze';
-    matrix.forEach(row => div.appendChild(renderMazeRow(row)));
-    return div;
-}
-
-class MazeGame {
-    constructor() {
-        this.activeScreen = Screen.START;
-
-        this.setActiveScreen = screen => {
-            hideScreen(this.activeScreen);
-            this.activeScreen = screen;
-            showScreen(this.activeScreen);
-        };
-
-        this.handleBtnStartClick = () => {
-            this.setActiveScreen(Screen.MAZE_1);
-        };
-
-        this.start = () => {
-            showScreen(this.activeScreen);
-            getMazeEl(Maze.MAZE_1).appendChild(renderMaze(MAZE_MATRIX_1));
-        };
-    }
-
-}
-
-window.mg = new MazeGame();
+window.mg = new __WEBPACK_IMPORTED_MODULE_1__components_MazeGame__["a" /* MazeGame */]();
 mg.start();
 
 /***/ }),
@@ -201,7 +118,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  font-family: 'Roboto';\n  margin: 0;\n  padding: 0; }\n\n.main {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  align-content: stretch; }\n\n.header {\n  height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.footer {\n  height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.green-fence {\n  background-image: repeating-linear-gradient(135deg, #fff, #fff 60px, #70C8A0 60px, #70C8A0 120px);\n  border: solid #D8D8D8;\n  border-width: 11px 0;\n  flex: 1; }\n\n.content {\n  flex: 1; }\n\n.title {\n  font-size: 48px;\n  color: #3A7395; }\n\n.btn-start-game {\n  height: 100px;\n  width: 280px;\n  background-color: #84CDF9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  cursor: pointer;\n  margin: 30px auto; }\n\n.btn-text {\n  color: #fff;\n  font-size: 36px; }\n\n.screen {\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n\n.hidden {\n  display: none; }\n\n.story-desk {\n  background-color: #C86571;\n  color: #fff;\n  padding: 30px 60px 100px;\n  max-width: 800px;\n  margin: 75px auto; }\n\n.text-title {\n  font-size: 36px;\n  padding-bottom: 20px; }\n\n.text {\n  font-size: 24px; }\n\n.maze-cell {\n  width: 50px;\n  height: 50px;\n  border: 1px solid #70C8A0; }\n\n.maze-row {\n  display: flex;\n  flex-direction: row; }\n\n.screen-maze {\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n", ""]);
+exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  font-family: 'Roboto';\n  margin: 0;\n  padding: 0; }\n\n.main {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  align-content: stretch; }\n\n.header {\n  height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.footer {\n  height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.green-fence {\n  background-image: repeating-linear-gradient(135deg, #fff, #fff 60px, #70C8A0 60px, #70C8A0 120px);\n  border: solid #D8D8D8;\n  border-width: 11px 0;\n  flex: 1; }\n\n.content {\n  flex: 1; }\n\n.title {\n  font-size: 48px;\n  color: #3A7395; }\n\n.btn-start-game {\n  height: 100px;\n  width: 280px;\n  background-color: #84CDF9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  cursor: pointer;\n  margin: 30px auto; }\n\n.btn-text {\n  color: #fff;\n  font-size: 36px; }\n\n.screen {\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n\n.hidden {\n  display: none; }\n\n.story-desk {\n  background-color: #C86571;\n  color: #fff;\n  padding: 30px 60px 100px;\n  max-width: 800px;\n  margin: 75px auto; }\n\n.text-title {\n  font-size: 36px;\n  padding-bottom: 20px; }\n\n.text {\n  font-size: 24px; }\n\n.maze-cell {\n  width: 50px;\n  height: 50px;\n  border: 1px solid #70C8A0;\n  box-sizing: border-box; }\n\n.maze-row {\n  display: flex;\n  flex-direction: row; }\n  .maze-row .maze-cell {\n    margin-left: -1px;\n    margin-top: -1px; }\n  .maze-row .maze-cell:first-child {\n    margin-left: 0; }\n\n.screen-maze {\n  justify-content: center;\n  align-items: center; }\n\n.user-position {\n  background-color: red;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  position: absolute;\n  transition: 0.5s; }\n", ""]);
 
 // exports
 
@@ -740,6 +657,284 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__constants__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Screen__ = __webpack_require__(8);
+
+
+
+class MazeGame {
+    constructor() {
+        this.screens = [new __WEBPACK_IMPORTED_MODULE_1__Screen__["a" /* Screen */](__WEBPACK_IMPORTED_MODULE_0__constants__["b" /* ScreenSettings */].SCREEN_START), new __WEBPACK_IMPORTED_MODULE_1__Screen__["a" /* Screen */](__WEBPACK_IMPORTED_MODULE_0__constants__["b" /* ScreenSettings */].SCREEN_MAZE_1), new __WEBPACK_IMPORTED_MODULE_1__Screen__["a" /* Screen */](__WEBPACK_IMPORTED_MODULE_0__constants__["b" /* ScreenSettings */].SCREEN_STORY_2), new __WEBPACK_IMPORTED_MODULE_1__Screen__["a" /* Screen */](__WEBPACK_IMPORTED_MODULE_0__constants__["b" /* ScreenSettings */].SCREEN_MAZE_2)];
+
+        this.showNextScreen = () => {
+            this.activeScreen.hide();
+            const index = this.screens.indexOf(this.activeScreen) + 1;
+            this.activeScreen = this.screens[index];
+            this.activeScreen.show();
+        };
+
+        this.handleBtnStartClick = () => {
+            this.showNextScreen();
+        };
+
+        this.handleKeyDown = e => this.activeScreen.onKeyDown(e);
+
+        this.start = () => {
+            this.activeScreen = this.screens[0];
+            this.activeScreen.show();
+            document.body.addEventListener('keydown', this.handleKeyDown);
+        };
+    }
+
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = MazeGame;
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+const ScreenId = {
+    START: 'start',
+    STORY_1: 'story-1',
+    MAZE_1: 'maze-1',
+    STORY_2: 'story-2',
+    MAZE_2: 'maze-2'
+};
+/* unused harmony export ScreenId */
+
+
+const MazeId = {
+    MAZE_1: 'maze-1',
+    MAZE_2: 'maze-2'
+};
+/* unused harmony export MazeId */
+
+
+const MAZE_MATRIX_1 = [[{ right: 1 }, { top: 1, right: 1, bottom: 1, left: 1 }, { left: 1 }], [{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1 }]];
+/* unused harmony export MAZE_MATRIX_1 */
+
+
+const MAZE_MATRIX_2 = [[{ right: 1 }, { top: 1, right: 1, bottom: 1, left: 1 }, { left: 1 }], [{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1 }]];
+/* unused harmony export MAZE_MATRIX_2 */
+
+
+const MazeSettings = {
+    MAZE_1: {
+        id: MazeId.MAZE_1,
+        defaultPosition: { x: 1, y: 0 },
+        matrix: MAZE_MATRIX_1
+    },
+    MAZE_2: {
+        id: MazeId.MAZE_2,
+        defaultPosition: { x: 1, y: 0 },
+        matrix: MAZE_MATRIX_2
+    }
+};
+/* unused harmony export MazeSettings */
+
+
+const KeyCode = {
+    ARROW_UP: 38,
+    ARROW_RIGHT: 39,
+    ARROW_DOWN: 40,
+    ARROW_LEFT: 37
+};
+/* harmony export (immutable) */ __webpack_exports__["a"] = KeyCode;
+
+
+const ScreenSettings = {
+    SCREEN_START: {
+        id: ScreenId.START
+    },
+    SCREEN_STORY_1: {
+        id: ScreenId.STORY_1
+    },
+    SCREEN_MAZE_1: {
+        id: ScreenId.MAZE_1,
+        mazeSettings: MazeSettings.MAZE_1
+    },
+    SCREEN_STORY_2: {
+        id: ScreenId.STORY_2
+    },
+    SCREEN_MAZE_2: {
+        id: ScreenId.MAZE_2
+    }
+};
+/* harmony export (immutable) */ __webpack_exports__["b"] = ScreenSettings;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Maze__ = __webpack_require__(9);
+
+
+function getScreenEl(screen) {
+    return document.getElementById('screen-' + screen);
+}
+
+function showScreen(screen) {
+    getScreenEl(screen).classList.remove('hidden');
+}
+
+function hideScreen(screen) {
+    getScreenEl(screen).classList.add('hidden');
+}
+
+class Screen {
+    constructor(screenSettings) {
+        this.show = () => showScreen(this.screenSettings.id);
+
+        this.hide = () => hideScreen(this.screenSettings.id);
+
+        this.onKeyDown = e => {
+            if (this.maze) {
+                this.maze.onKeyDown(e);
+            }
+        };
+
+        this.screenSettings = screenSettings;
+        const { mazeSettings } = this.screenSettings;
+        if (mazeSettings) {
+            this.maze = new __WEBPACK_IMPORTED_MODULE_0__Maze__["a" /* Maze */](mazeSettings);
+            this.maze.render();
+        }
+    }
+
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Screen;
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__UserPosition__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__constants__ = __webpack_require__(7);
+
+
+function getMazeEl(id) {
+    return document.getElementById(id);
+}
+
+function renderMazeCell(cell) {
+    const div = document.createElement('div');
+    div.className = 'maze-cell';
+    if (cell.top) {
+        div.style.borderTopWidth = 0;
+    }
+    if (cell.right) {
+        div.style.borderRightWidth = 0;
+    }
+    if (cell.bottom) {
+        div.style.borderBottomWidth = 0;
+    }
+    if (cell.left) {
+        div.style.borderLeftWidth = 0;
+    }
+
+    return div;
+}
+
+function renderMazeRow(row) {
+    const div = document.createElement('div');
+    div.className = 'maze-row';
+    row.forEach(cell => div.appendChild(renderMazeCell(cell)));
+    return div;
+}
+
+function renderMaze(matrix) {
+    const div = document.createElement('div');
+    div.className = 'maze';
+    matrix.forEach(row => div.appendChild(renderMazeRow(row)));
+    return div;
+}
+
+class Maze {
+    constructor(mazeSettings) {
+        this.onKeyDown = e => {
+            const { x, y } = this.currentPosition;
+            const { matrix } = this.mazeSettings;
+            const mazeCell = matrix[y][x];
+            const maxX = matrix[0].length;
+            const maxY = matrix.length;
+            switch (e.keyCode) {
+                case __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* KeyCode */].ARROW_UP:
+                    if (mazeCell.top && y - 1 >= 0) {
+                        this.currentPosition = { x, y: y - 1 };
+                    }
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* KeyCode */].ARROW_DOWN:
+                    if (mazeCell.bottom && y + 1 < maxY) {
+                        this.currentPosition = { x, y: y + 1 };
+                    }
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* KeyCode */].ARROW_LEFT:
+                    if (mazeCell.left && x - 1 >= 0) {
+                        this.currentPosition = { x: x - 1, y };
+                    }
+                    break;
+                case __WEBPACK_IMPORTED_MODULE_1__constants__["a" /* KeyCode */].ARROW_RIGHT:
+                    if (mazeCell.right && x + 1 < maxX) {
+                        this.currentPosition = { x: x + 1, y };
+                    }
+                    break;
+            }
+            this.userPosition.setPosition(this.currentPosition);
+        };
+
+        this.mazeSettings = mazeSettings;
+        this.currentPosition = mazeSettings.defaultPosition;
+    }
+
+    render() {
+        const { id, matrix } = this.mazeSettings;
+
+        this.userPosition = new __WEBPACK_IMPORTED_MODULE_0__UserPosition__["a" /* UserPosition */]();
+        getMazeEl(id).appendChild(this.userPosition.render());
+        this.userPosition.setPosition(this.currentPosition);
+
+        getMazeEl(id).appendChild(renderMaze(matrix));
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Maze;
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function renderUserPosition() {
+    const div = document.createElement('div');
+    div.className = 'user-position';
+    return div;
+}
+
+class UserPosition {
+    setPosition({ x, y }) {
+        this.el.style.marginLeft = x * 50 + 'px';
+        this.el.style.marginTop = y * 50 + 'px';
+    }
+
+    render() {
+        this.el = renderUserPosition();
+        return this.el;
+    }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = UserPosition;
 
 
 /***/ })
