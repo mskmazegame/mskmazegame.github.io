@@ -8,22 +8,26 @@
 <body>
 <div class="main">
     <header class="header">
-        <div class="title">Moscow maze game</div>
+        <div class="title">Московский лабиринт</div>
     </header>
     <section class="content">
         <div id="screen-start" class="screen hidden">
             <div class="green-fence">
                 <div class="story-desk">
-                    <div class="text-title">Помоги Полине вернуть Серёжу</div>
+                    <div class="text-title">Эй! Слышь! Ты!!!</div>
                     <div class="text">
-                        Серёжа — бывший парень Полины. Сейчас он идёт
-                        на свидание с Наташей в Сoffee Bean.  Полина хочет
-                        вернуть Серёжу, потому что Наташа — стерва.
+                        Эй братиш, ты чо не местный? Похоже, ты только вчера из Тулы приехал.
+                        Пройди лабиринты - и я скажу что ты за москвич.
                     </div>
                 </div>
             </div>
-            <div class="btn-start-game" onclick="mg.handleBtnStartClick()">
-                <span class="btn-text">Играть</span>
+            <div style="display: flex; flex-direction: row">
+                <div class="btn-start-game" onclick="mg.handleBtnStartClick()">
+                    <span class="btn-text">Ну давай</span>
+                </div>
+                <div class="btn-start-game">
+                    <span class="btn-text">Да пошел ты!</span>
+                </div>
             </div>
         </div>
         <div id="screen-story-1" class="screen hidden">
@@ -31,10 +35,35 @@
         <div id="screen-maze-1" class="screen screen-maze hidden">
             <div id="maze-1" class="maze-container">
             </div>
+            <div class="btn-start-game btn-next-screen" style="display: none; margin-top: 30px" onclick="mg.handleBtnNextScreenClick()">
+                <span class="btn-text">Я крут</span>
+            </div>
         </div>
         <div id="screen-story-2" class="screen hidden">
+            <div class="green-fence">
+                <div class="story-desk">
+                    <div class="text-title">Ну это все фигня!</div>
+                    <div class="text">
+                        Это было очень просто! Вот вчера на академической перекопали. Там хрен пройдешь.
+                        Я вчера в гастрономе ночевал
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row">
+                <div class="btn-start-game" onclick="mg.handleBtnNextScreenClick()">
+                    <span class="btn-text">Я бы дошел</span>
+                </div>
+                <div class="btn-start-game">
+                    <span class="btn-text">Задолбало!</span>
+                </div>
+            </div>
         </div>
-        <div id="screen-maze-2" class="screen hidden">
+        <div id="screen-maze-2" class="screen screen-maze hidden">
+            <div id="maze-2" class="maze-container">
+            </div>
+            <div class="btn-start-game btn-next-screen" style="display: none; margin-top: 30px" onclick="mg.handleBtnNextScreenClick()">
+                <span class="btn-text">Я снова дома!</span>
+            </div>
         </div>
     </section>
 </div>

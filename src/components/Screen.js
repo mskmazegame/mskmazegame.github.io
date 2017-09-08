@@ -17,7 +17,7 @@ export class Screen {
         this.screenSettings = screenSettings;
         const {mazeSettings} = this.screenSettings;
         if (mazeSettings) {
-            this.maze = new Maze(mazeSettings);
+            this.maze = new Maze(mazeSettings, this.onFinish);
             this.maze.render();
         }
     }
@@ -27,6 +27,10 @@ export class Screen {
         if (this.maze) {
             this.maze.start();
         }
+    };
+
+    onFinish = () => {
+        getScreenEl(this.screenSettings.id).getElementsByClassName('btn-next-screen')[0].style.display = 'flex';
     };
 
     hide = () => {

@@ -85,11 +85,11 @@ const MazeId = {
 /* unused harmony export MazeId */
 
 
-const MAZE_MATRIX_1 = [[[{ right: 1 }, { top: 1, right: 1, bottom: 1, left: 1 }, { left: 1 }], [{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1 }]], [[{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1, bottom: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1, bottom: 1 }], [{ top: 1 }, { top: 1, bottom: 1 }, { top: 1 }]]];
+const MAZE_MATRIX_1 = [[[{ right: 1 }, { top: 1, right: 1, bottom: 1, left: 1 }, { left: 1 }], [{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1 }, { right: 1, bottom: 1, finish: true }, { top: 1, left: 1 }]], [[{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1, bottom: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1, bottom: 1 }], [{ top: 1 }, { top: 1, bottom: 1, finish: true }, { top: 1 }]]];
 /* unused harmony export MAZE_MATRIX_1 */
 
 
-const MAZE_MATRIX_2 = [[{ right: 1 }, { top: 1, right: 1, bottom: 1, left: 1 }, { left: 1 }], [{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1 }]];
+const MAZE_MATRIX_2 = [[[{ right: 1 }, { top: 1, right: 1, bottom: 1, left: 1 }, { left: 1 }], [{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1 }, { right: 1, bottom: 1, finish: true }, { top: 1, left: 1 }]], [[{ right: 1, bottom: 1 }, { top: 1, right: 1, left: 1 }, { left: 1, bottom: 1 }], [{ top: 1, bottom: 1 }, { right: 1, bottom: 1 }, { top: 1, left: 1, bottom: 1 }], [{ top: 1 }, { top: 1, bottom: 1, finish: true }, { top: 1 }]]];
 /* unused harmony export MAZE_MATRIX_2 */
 
 
@@ -132,7 +132,8 @@ const ScreenSettings = {
         id: ScreenId.STORY_2
     },
     SCREEN_MAZE_2: {
-        id: ScreenId.MAZE_2
+        id: ScreenId.MAZE_2,
+        mazeSettings: MazeSettings.MAZE_2
     }
 };
 /* harmony export (immutable) */ __webpack_exports__["b"] = ScreenSettings;
@@ -193,7 +194,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  font-family: 'Roboto';\n  margin: 0;\n  padding: 0; }\n\n.main {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  align-content: stretch; }\n\n.header {\n  height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.footer {\n  height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.green-fence {\n  background-image: repeating-linear-gradient(135deg, #fff, #fff 60px, #70C8A0 60px, #70C8A0 120px);\n  border: solid #D8D8D8;\n  border-width: 11px 0;\n  flex: 1; }\n\n.content {\n  flex: 1; }\n\n.title {\n  font-size: 48px;\n  color: #3A7395; }\n\n.btn-start-game {\n  height: 100px;\n  width: 280px;\n  background-color: #84CDF9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  cursor: pointer;\n  margin: 30px auto; }\n\n.btn-text {\n  color: #fff;\n  font-size: 36px; }\n\n.screen {\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n\n.hidden {\n  display: none; }\n\n.story-desk {\n  background-color: #C86571;\n  color: #fff;\n  padding: 30px 60px 100px;\n  max-width: 800px;\n  margin: 75px auto; }\n\n.text-title {\n  font-size: 36px;\n  padding-bottom: 20px; }\n\n.text {\n  font-size: 24px; }\n\n.maze-cell {\n  width: 50px;\n  height: 50px;\n  border: 1px solid #70C8A0;\n  box-sizing: border-box;\n  transition: 1s; }\n\n.maze-row {\n  display: flex;\n  flex-direction: row; }\n  .maze-row .maze-cell {\n    margin-left: -1px;\n    margin-top: -1px; }\n  .maze-row .maze-cell:first-child {\n    margin-left: 0; }\n\n.maze-container {\n  transition: 2s; }\n\n.screen-maze {\n  justify-content: center;\n  align-items: center; }\n\n.user-position {\n  background-color: red;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  position: absolute;\n  transition: 0.5s; }\n", ""]);
+exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  font-family: 'Roboto';\n  margin: 0;\n  padding: 0; }\n\n.main {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: stretch;\n  align-content: stretch; }\n\n.header {\n  height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.footer {\n  height: 240px;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n\n.green-fence {\n  background-image: repeating-linear-gradient(135deg, #fff, #fff 60px, #70C8A0 60px, #70C8A0 120px);\n  border: solid #D8D8D8;\n  border-width: 11px 0;\n  flex: 1; }\n\n.content {\n  flex: 1; }\n\n.title {\n  font-size: 48px;\n  color: #3A7395; }\n\n.btn-start-game {\n  height: 100px;\n  width: 280px;\n  background-color: #84CDF9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  border: none;\n  cursor: pointer;\n  margin: 30px auto; }\n\n.btn-text {\n  color: #fff;\n  font-size: 36px; }\n\n.screen {\n  display: flex;\n  flex-direction: column;\n  height: 100%; }\n\n.hidden {\n  display: none; }\n\n.story-desk {\n  background-color: #C86571;\n  color: #fff;\n  padding: 30px 60px 100px;\n  max-width: 800px;\n  margin: 75px auto; }\n\n.text-title {\n  font-size: 36px;\n  padding-bottom: 20px; }\n\n.text {\n  font-size: 24px; }\n\n.maze-cell {\n  width: 50px;\n  height: 50px;\n  border: 1px solid #70C8A0;\n  box-sizing: border-box;\n  transition: 1s;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: red;\n  font-size: 12px; }\n\n.maze-row {\n  display: flex;\n  flex-direction: row; }\n  .maze-row .maze-cell {\n    margin-left: -1px;\n    margin-top: -1px; }\n  .maze-row .maze-cell:first-child {\n    margin-left: 0; }\n\n.maze-container {\n  transition: 2s; }\n\n.screen-maze {\n  justify-content: center;\n  align-items: center; }\n\n.user-position {\n  background-color: red;\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  position: absolute;\n  transition: 0.5s; }\n", ""]);
 
 // exports
 
@@ -759,6 +760,10 @@ class MazeGame {
             this.showNextScreen();
         };
 
+        this.handleBtnNextScreenClick = () => {
+            this.showNextScreen();
+        };
+
         this.handleKeyDown = e => this.activeScreen.onKeyDown(e);
 
         this.start = () => {
@@ -801,6 +806,10 @@ class Screen {
             }
         };
 
+        this.onFinish = () => {
+            getScreenEl(this.screenSettings.id).getElementsByClassName('btn-next-screen')[0].style.display = 'flex';
+        };
+
         this.hide = () => {
             hideScreen(this.screenSettings.id);
             if (this.maze) {
@@ -817,7 +826,7 @@ class Screen {
         this.screenSettings = screenSettings;
         const { mazeSettings } = this.screenSettings;
         if (mazeSettings) {
-            this.maze = new __WEBPACK_IMPORTED_MODULE_0__Maze__["a" /* Maze */](mazeSettings);
+            this.maze = new __WEBPACK_IMPORTED_MODULE_0__Maze__["a" /* Maze */](mazeSettings, this.onFinish);
             this.maze.render();
         }
     }
@@ -874,6 +883,9 @@ function renderMazeCell(cell) {
     const div = document.createElement('div');
     div.className = CLASS_NAME_MAZE_CELL;
     styleCell(cell, div);
+    if (cell.finish) {
+        div.innerHTML = 'Финиш';
+    }
     return div;
 }
 
@@ -892,7 +904,7 @@ function renderMaze(matrix) {
 }
 
 class Maze {
-    constructor(mazeSettings) {
+    constructor(mazeSettings, onFinish) {
         this.onKeyDown = e => {
             const { x, y } = this.currentPosition;
             const { matrix } = this.mazeSettings;
@@ -922,12 +934,17 @@ class Maze {
                     break;
             }
             this.userPosition.setPosition(this.currentPosition);
+            const newMazeCell = matrix[this.index][this.currentPosition.y][this.currentPosition.x];
+            if (newMazeCell.finish) {
+                this.onFinish();
+            }
         };
 
         this.mazeSettings = mazeSettings;
         this.currentPosition = mazeSettings.defaultPosition;
         this.index = 0;
         this.deg = 0;
+        this.onFinish = onFinish;
     }
 
     updateMatrix() {

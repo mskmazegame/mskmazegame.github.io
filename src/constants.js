@@ -15,19 +15,26 @@ export const MAZE_MATRIX_1 = [
     [
         [{right: 1}, {top: 1, right: 1, bottom: 1, left: 1}, {left: 1}],
         [{right: 1, bottom: 1}, {top: 1, right: 1, left: 1}, {left: 1, bottom: 1}],
-        [{top: 1}, {right: 1, bottom: 1}, {top: 1, left: 1}]
+        [{top: 1}, {right: 1, bottom: 1, finish: true}, {top: 1, left: 1}]
     ],
     [
         [{right: 1, bottom: 1}, {top: 1, right: 1, left: 1}, {left: 1, bottom: 1}],
-        [{top: 1, bottom: 1}, {right: 1, bottom: 1}, {top:1, left: 1, bottom: 1}],
-        [{top: 1}, {top: 1, bottom: 1}, {top: 1}]
+        [{top: 1, bottom: 1}, {right: 1, bottom: 1}, {top: 1, left: 1, bottom: 1}],
+        [{top: 1}, {top: 1, bottom: 1, finish: true}, {top: 1}]
     ]
 ];
 
 export const MAZE_MATRIX_2 = [
-    [{right: 1}, {top: 1, right: 1, bottom: 1, left: 1}, {left: 1}],
-    [{right: 1, bottom: 1}, {top: 1, right: 1, left: 1}, {left: 1, bottom: 1}],
-    [{top: 1}, {right: 1, bottom: 1}, {top: 1, left: 1}]
+    [
+        [{right: 1}, {top: 1, right: 1, bottom: 1, left: 1}, {left: 1}],
+        [{right: 1, bottom: 1}, {top: 1, right: 1, left: 1}, {left: 1, bottom: 1}],
+        [{top: 1}, {right: 1, bottom: 1, finish: true}, {top: 1, left: 1}]
+    ],
+    [
+        [{right: 1, bottom: 1}, {top: 1, right: 1, left: 1}, {left: 1, bottom: 1}],
+        [{top: 1, bottom: 1}, {right: 1, bottom: 1}, {top: 1, left: 1, bottom: 1}],
+        [{top: 1}, {top: 1, bottom: 1, finish: true}, {top: 1}]
+    ]
 ];
 
 export const MazeSettings = {
@@ -65,6 +72,7 @@ export const ScreenSettings = {
         id: ScreenId.STORY_2
     },
     SCREEN_MAZE_2: {
-        id: ScreenId.MAZE_2
+        id: ScreenId.MAZE_2,
+        mazeSettings: MazeSettings.MAZE_2
     }
 };

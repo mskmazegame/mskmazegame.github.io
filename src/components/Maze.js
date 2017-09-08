@@ -39,6 +39,9 @@ function renderMazeCell(cell) {
     const div = document.createElement('div');
     div.className = CLASS_NAME_MAZE_CELL;
     styleCell(cell, div);
+    if(cell.finish){
+        div.innerHTML = 'Финиш';
+    }
     return div;
 }
 
@@ -57,11 +60,12 @@ function renderMaze(matrix) {
 }
 
 export class Maze {
-    constructor(mazeSettings) {
+    constructor(mazeSettings, onFinish) {
         this.mazeSettings = mazeSettings;
         this.currentPosition = mazeSettings.defaultPosition;
         this.index = 0;
         this.deg = 0;
+        this.onFinish = onFinish;
     }
 
     onKeyDown = e => {
@@ -93,6 +97,10 @@ export class Maze {
                 break;
         }
         this.userPosition.setPosition(this.currentPosition);
+        const newMazeCell = matrix[this.index][this.currentPosition.y][this.currentPosition.x];
+        if(newMazeCell.finish){
+            this.onFinish();
+        }
     };
 
     updateMatrix() {

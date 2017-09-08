@@ -23,6 +23,10 @@ export class MazeGame {
         this.showNextScreen();
     };
 
+    handleBtnNextScreenClick = () => {
+        this.showNextScreen();
+    };
+
     handleKeyDown = e => this.activeScreen.onKeyDown(e);
 
     start = () => {
