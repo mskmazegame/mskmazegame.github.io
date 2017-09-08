@@ -22,9 +22,20 @@ export class Screen {
         }
     }
 
-    show = () => showScreen(this.screenSettings.id);
+    show = () => {
+        showScreen(this.screenSettings.id);
+        if (this.maze) {
+            this.maze.start();
+        }
+    };
 
-    hide = () => hideScreen(this.screenSettings.id)
+    hide = () => {
+        hideScreen(this.screenSettings.id);
+        if (this.maze) {
+            this.maze.stop();
+        }
+
+    };
 
     onKeyDown = e => {
         if (this.maze) {

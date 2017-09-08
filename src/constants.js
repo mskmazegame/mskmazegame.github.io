@@ -12,9 +12,16 @@ export const MazeId = {
 };
 
 export const MAZE_MATRIX_1 = [
-    [{right: 1}, {top: 1, right: 1, bottom: 1, left: 1}, {left: 1}],
-    [{right: 1, bottom: 1}, {top: 1, right: 1, left: 1}, {left: 1, bottom: 1}],
-    [{top: 1}, {right: 1, bottom: 1}, {top: 1, left: 1}]
+    [
+        [{right: 1}, {top: 1, right: 1, bottom: 1, left: 1}, {left: 1}],
+        [{right: 1, bottom: 1}, {top: 1, right: 1, left: 1}, {left: 1, bottom: 1}],
+        [{top: 1}, {right: 1, bottom: 1}, {top: 1, left: 1}]
+    ],
+    [
+        [{right: 1, bottom: 1}, {top: 1, right: 1, left: 1}, {left: 1, bottom: 1}],
+        [{top: 1, bottom: 1}, {right: 1, bottom: 1}, {top:1, left: 1, bottom: 1}],
+        [{top: 1}, {top: 1, bottom: 1}, {top: 1}]
+    ]
 ];
 
 export const MAZE_MATRIX_2 = [
